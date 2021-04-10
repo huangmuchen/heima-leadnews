@@ -8,6 +8,7 @@ import com.heima.model.common.enums.AppHttpCodeEnum;
 import com.heima.model.mappers.admin.AdUserMapper;
 import com.heima.model.media.pojos.WmUser;
 import com.heima.utils.jwt.AppJwtUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.Map;
  * @Description: 后台管理用户登录业务层实现类
  */
 @Service
+@Slf4j
 public class LoginServiceImpl implements ILoginService {
     @Autowired
     private AdUserMapper adUserMapper;
@@ -33,6 +35,8 @@ public class LoginServiceImpl implements ILoginService {
      */
     @Override
     public ResponseResult login(AdUser user) {
+        // 记录日志
+        log.info("开始用户登录校验:{}", user.getName());
         // 参数校验
         if (StringUtils.isEmpty(user.getName()) || StringUtils.isEmpty(user.getPassword())) {
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_REQUIRE, "用户名或密码不能为空");
