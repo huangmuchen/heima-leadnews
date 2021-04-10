@@ -57,6 +57,8 @@ public class LoginServiceImpl implements ILoginService {
                 return ResponseResult.errorResult(AppHttpCodeEnum.LOGIN_PASSWORD_ERROR);
             }
         } else {
+            // 记录日志
+            log.info("校验失败，用户不存在:{}", user.getName());
             return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST, "用户不存在");
         }
     }
