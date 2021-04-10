@@ -18,6 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @MapperScan("com.heima.admin.dao") // mapper接口的包扫描
 @EnableScheduling // 开启定时任务
 public class AdminApplication {
+    // 程序入口
     public static void main(String[] args) {
         SpringApplication.run(AdminApplication.class, args);
     }
