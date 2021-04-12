@@ -1,5 +1,8 @@
 package com.heima.admin.controller.v1;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Author： Huang Lei
  * @Date： 2021/4/12 12:51
@@ -8,6 +11,10 @@ package com.heima.admin.controller.v1;
  */
 public class huanglei {
     public static void main(String[] args) {
-        System.out.println("qjkhakwjf");
+        Map map =new HashMap();
+    }
+
+    public void test(){
+        System.out.println("ahahhahahah");
     }
 }
